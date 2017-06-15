@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.User;
+import com.example.demo.entity.UserProfile;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +17,7 @@ public class TestController {
     private static final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/hello")
-    public User hello(){
-        return new User(counter.incrementAndGet(),template);
+    public UserProfile hello(){
+        return new UserProfile(counter.incrementAndGet(),template);
     }
 }

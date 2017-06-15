@@ -22,7 +22,7 @@ public class DruidDataSourceConfig implements EnvironmentAware {
 
     @Override
     public void setEnvironment(Environment environment) {
-        this.relaxedPropertyResolver = new RelaxedPropertyResolver(environment,"spring.datasource.");
+        this.relaxedPropertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
     }
 
     @Bean
@@ -33,18 +33,17 @@ public class DruidDataSourceConfig implements EnvironmentAware {
         datasource.setDriverClassName(relaxedPropertyResolver.getProperty("driver-class-name"));
         datasource.setUsername(relaxedPropertyResolver.getProperty("username"));
         datasource.setPassword(relaxedPropertyResolver.getProperty("password"));
-        datasource.setInitialSize(Integer.valueOf(relaxedPropertyResolver.getProperty("initial-size")));
-        datasource.setMinIdle(Integer.valueOf(relaxedPropertyResolver.getProperty("min-idle")));
-        datasource.setMaxWait(Long.valueOf(relaxedPropertyResolver.getProperty("max-wait")));
-        datasource.setMaxActive(Integer.valueOf(relaxedPropertyResolver.getProperty("max-active")));
-        datasource.setMinEvictableIdleTimeMillis(Long.valueOf(relaxedPropertyResolver.getProperty("min-evictable-idle-time-millis")));
+        datasource.setInitialSize(Integer.valueOf(relaxedPropertyResolver.getProperty("druid.initial-size")));
+        datasource.setMinIdle(Integer.valueOf(relaxedPropertyResolver.getProperty("druid.min-idle")));
+        datasource.setMaxWait(Long.valueOf(relaxedPropertyResolver.getProperty("druid.max-wait")));
+        datasource.setMaxActive(Integer.valueOf(relaxedPropertyResolver.getProperty("druid.max-active")));
+        datasource.setMinEvictableIdleTimeMillis(Long.valueOf(relaxedPropertyResolver.getProperty("druid.min-evictable-idle-time-millis")));
         try {
             datasource.setFilters("stat,wall");
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return datasource;
-
     }
 
 }

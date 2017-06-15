@@ -10,9 +10,9 @@ spring:
  application:
   name: admin-managee
  datasource:
-  url: jdbc:mysql://127.0.0.1:3306/springboot
-  username: root
-  password: 123456
+  url: jdbc:mysql://127.0.0.1:3306/springbootdemo
+  username: zhangmz
+  password: zhangmz123
   driver-class-name: com.mysql.jdbc.Driver
   type: com.alibaba.druid.pool.DruidDataSource
   druid:

@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.example.demo.core.service;
 
-import com.example.demo.entity.User;
-import com.example.demo.entity.UserCriteria;
+import com.example.demo.core.entity.User;
+import com.example.demo.core.entity.UserCriteria;
 
 import java.util.List;
 

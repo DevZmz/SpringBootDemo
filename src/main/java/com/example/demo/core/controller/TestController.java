@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.example.demo.core.controller;
 
-import com.example.demo.entity.UserProfile;
+import com.example.demo.core.entity.UserProfile;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

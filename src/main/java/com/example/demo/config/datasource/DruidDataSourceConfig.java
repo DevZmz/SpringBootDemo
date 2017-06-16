@@ -1,6 +1,8 @@
-package com.example.demo.config;
+package com.example.demo.config.datasource;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +20,9 @@ import java.sql.SQLException;
 @Configuration
 @EnableTransactionManagement
 public class DruidDataSourceConfig implements EnvironmentAware {
+
+    private Logger logger = LoggerFactory.getLogger(DruidDataSourceConfig.class);
+
     private RelaxedPropertyResolver relaxedPropertyResolver;
 
     @Override
@@ -27,7 +32,7 @@ public class DruidDataSourceConfig implements EnvironmentAware {
 
     @Bean
     public DataSource dataSource(){
-        System.out.println("注入druid!!!");
+        this.logger.debug("init DruidDataSourceConfig...");
         DruidDataSource datasource = new DruidDataSource();
         datasource.setUrl(relaxedPropertyResolver.getProperty("url"));
         datasource.setDriverClassName(relaxedPropertyResolver.getProperty("driver-class-name"));

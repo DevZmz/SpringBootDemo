@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.core.entity;
 
 /**
  * Created by zhangmz on 2017/6/14.

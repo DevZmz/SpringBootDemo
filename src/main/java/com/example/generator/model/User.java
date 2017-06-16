@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.generator.model;
 
 public class User {
     /**
@@ -73,7 +73,7 @@ public class User {
      * @mbg.generated
      */
     public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+        this.username = username;
     }
 
     /**
@@ -97,6 +97,6 @@ public class User {
      * @mbg.generated
      */
     public void setPsw(String psw) {
-        this.psw = psw == null ? null : psw.trim();
+        this.psw = psw;
     }
 }

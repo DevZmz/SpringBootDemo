@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.config.datasource;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 
@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet(
         urlPatterns = "/druid/*",
         initParams= {
-                @WebInitParam(name = "allow", value = "127.0.0.1,192.168.1.126"),// IP白名单 (没有配置或者为空，则允许所有访问)
+                @WebInitParam(name = "allow", value = "127.0.0.1,192.168.3.47"),// IP白名单 (没有配置或者为空，则允许所有访问)
                 @WebInitParam(name = "deny", value = "192.168.3.47"),// IP黑名单 (存在共同时，deny优先于allow)
                 @WebInitParam(name = "loginUsername", value = "zhangmz"),// 用户名
                 @WebInitParam(name = "loginPassword", value = "123456"),// 密码

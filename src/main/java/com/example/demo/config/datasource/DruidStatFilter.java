@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.config.datasource;
 
 import com.alibaba.druid.support.http.WebStatFilter;
 
